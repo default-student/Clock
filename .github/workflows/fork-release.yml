@@ -114,7 +114,7 @@ jobs:
       - name: Build signed APK
         if: steps.resolve.outputs.build == 'true'
         env:
-          SIGNING_KEY_ALIAS: ${{ secrets.CLOCK_KEY_ALIAS }}
+          SIGNING_KEY_ALIAS: clock-release
           SIGNING_KEY_PASSWORD: ${{ secrets.CLOCK_KEY_PASSWORD }}
           SIGNING_STORE_FILE: ${{ runner.temp }}/clock-release.keystore
           SIGNING_STORE_PASSWORD: ${{ secrets.CLOCK_KEYSTORE_PASSWORD }}

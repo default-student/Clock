@@ -6,7 +6,6 @@ Before the first release, add these repository Actions secrets:
 
 - `CLOCK_KEYSTORE_BASE64`: base64-encoded fork-specific release keystore
 - `CLOCK_KEYSTORE_PASSWORD`: keystore password
-- `CLOCK_KEY_ALIAS`: key alias
 - `CLOCK_KEY_PASSWORD`: key password
 
 Use the same keystore for every release so Android accepts later APKs as updates. The fork uses package ID `org.fossify.clock.fork`, so it installs beside the official app and has separate app data and alarms. Nothing is migrated automatically. To copy alarms and timers, use the official app's **Export alarms and timers**, then the fork's **Import alarms and timers**; settings and other app data remain separate.
