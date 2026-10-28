@@ -32,7 +32,9 @@ android {
     compileSdk = project.libs.versions.app.build.compileSDKVersion.get().toInt()
 
     defaultConfig {
-        applicationId = project.property("APP_ID").toString()
+        // Keep the fork installable beside the official Fossify Clock app.
+        // The namespace remains APP_ID so existing Kotlin packages and R imports stay stable.
+        applicationId = "${project.property("APP_ID")}.fork"
         minSdk = project.libs.versions.app.build.minimumSDK.get().toInt()
         targetSdk = project.libs.versions.app.build.targetSDK.get().toInt()
         versionName = project.property("VERSION_NAME").toString()

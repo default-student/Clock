@@ -36,6 +36,15 @@
     <string name="missed_alarm">Missed alarm</string>
     <string name="replaced_by_another_alarm">Replaced by another alarm</string>
     <string name="alarm_timed_out">Alarm timed out</string>
+    <string name="alarm_widget_name">Alarm</string>
+    <string name="alarm_widget_time">Alarm time</string>
+    <string name="alarm_widget_on">ON</string>
+    <string name="alarm_widget_off">OFF</string>
+    <string name="alarm_widget_choose">Choose an alarm</string>
+    <string name="alarm_widget_unavailable">Alarm unavailable. Tap to choose another.</string>
+    <string name="alarm_widget_no_alarms">Create an alarm in Fossify Clock first.</string>
+    <string name="alarm_widget_toggle_on">Turn alarm off</string>
+    <string name="alarm_widget_toggle_off">Turn alarm on</string>
 
     <!-- Timer -->
     <string name="timers_notification_msg">Timers are running</string>

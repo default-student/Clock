@@ -13,6 +13,7 @@ import org.fossify.clock.databinding.ItemAlarmBinding
 import org.fossify.clock.extensions.config
 import org.fossify.clock.extensions.dbHelper
 import org.fossify.clock.extensions.getFormattedTime
+import org.fossify.clock.extensions.updateWidgets
 import org.fossify.clock.helpers.updateNonRecurringAlarmDay
 import org.fossify.clock.interfaces.ToggleAlarmInterface
 import org.fossify.clock.models.Alarm
@@ -124,6 +125,7 @@ class AlarmsAdapter(
         alarms.removeAll(alarmsToRemove)
         removeSelectedItems(positions)
         activity.dbHelper.deleteAlarms(alarmsToRemove)
+        activity.updateWidgets()
         EventBus.getDefault().post(AlarmEvent.Refresh)
     }
 

@@ -140,6 +140,15 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".activities.AlarmWidgetConfigureActivity"
+            android:exported="true"
+            android:theme="@style/MyWidgetConfigTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".services.AlarmService"
             android:foregroundServiceType="specialUse">
@@ -218,6 +227,23 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_analogue_clock_info" />
         </receiver>
+
+        <receiver
+            android:name=".helpers.AlarmWidgetProvider"
+            android:exported="true"
+            android:label="@string/alarm_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_alarm_info" />
+        </receiver>
+
+        <receiver
+            android:name=".receivers.ToggleAlarmWidgetReceiver"
+            android:exported="false" />
 
         <receiver
             android:name=".receivers.UpdateWidgetReceiver"

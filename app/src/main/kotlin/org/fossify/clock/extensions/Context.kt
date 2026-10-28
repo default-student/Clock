@@ -26,6 +26,7 @@ import org.fossify.clock.activities.SplashActivity
 import org.fossify.clock.databases.AppDatabase
 import org.fossify.clock.helpers.ALARM_ID
 import org.fossify.clock.helpers.AlarmController
+import org.fossify.clock.helpers.AlarmWidgetProvider
 import org.fossify.clock.helpers.Config
 import org.fossify.clock.helpers.DBHelper
 import org.fossify.clock.helpers.EDITED_TIME_ZONE_SEPARATOR
@@ -291,6 +292,7 @@ fun Context.hideTimerNotification(timerId: Int) = hideNotification(timerId)
 fun Context.updateWidgets() {
     updateDigitalWidgets()
     updateAnalogueWidgets()
+    AlarmWidgetProvider.updateAll(applicationContext)
 }
 
 fun Context.updateDigitalWidgets() {
