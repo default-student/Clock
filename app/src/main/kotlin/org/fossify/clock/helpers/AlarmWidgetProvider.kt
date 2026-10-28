@@ -15,6 +15,7 @@ import org.fossify.clock.extensions.config
 import org.fossify.clock.extensions.dbHelper
 import org.fossify.clock.models.Alarm
 import org.fossify.clock.receivers.ToggleAlarmWidgetReceiver
+import org.fossify.commons.extensions.applyColorFilter
 import org.fossify.commons.extensions.getSelectedDaysString
 import org.fossify.commons.helpers.ensureBackgroundThread
 import java.util.Calendar
@@ -51,7 +52,7 @@ class AlarmWidgetProvider : AppWidgetProvider() {
             views.setTextColor(R.id.alarm_widget_time, textColor)
             views.setTextColor(R.id.alarm_widget_label, textColor)
             views.setTextColor(R.id.alarm_widget_toggle, textColor)
-            views.setInt(R.id.alarm_widget_root, "setBackgroundColor", context.config.widgetBgColor)
+            views.applyColorFilter(R.id.alarm_widget_background, context.config.widgetBgColor)
 
             if (alarm == null) {
                 views.setTextViewText(R.id.alarm_widget_time, context.getString(R.string.alarm_widget_name))
